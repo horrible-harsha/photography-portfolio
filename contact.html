@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Harsha The Horrible</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Harsha<span>_the_Horrible</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Let's Connect</h1>
+      <p>If you'd like to work together, collaborate, or just say hello — drop me a message below or reach out via Instagram.</p>
+
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwplnqgl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        
+        <input type="hidden" name="_subject" value="New message from your portfolio site!" />
+        <input type="hidden" name="_captcha" value="false" />
+      
+        <button type="submit">Send Message</button>
+      </form>
+      
+      <!-- Popup message -->
+      <div id="thankYouPopup" class="popup hidden">
+        <p>Thank you for your message! Redirecting to homepage...</p>
+      </div>
+
+      <div class="contact-links">
+        <p>📷 <a href="https://instagram.com/harsha_the_horrible" target="_blank">Instagram</a></p>
+        <p>📧 <a href="mailto:harshanambur@gmail.com">harshanambur@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Harsha The Horrible. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://instagram.com/harsha_the_horrible" target="_blank">📷 Instagram</a>
+      <a href="contact.html">✉️ Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
