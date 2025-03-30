@@ -436,7 +436,189 @@
     margin-top: 3rem;
   }
   
-  /* Basic nav */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--header-bg);
+    padding: 1rem 2rem;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Hide nav on mobile */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    #nav-links.hidden {
+      display: none;
+    }
+  
+    #nav-links {
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--header-bg);
+      margin-top: 1rem;
+      padding: 1rem 0;
+    }
+  
+    #nav-links a,
+    #nav-links button {
+      margin: 0.5rem 1.5rem;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  /* Always show nav on desktop */
+  @media (min-width: 769px) {
+    .menu-icon {
+      display: none;
+    }
+  
+    #nav-links {
+      display: flex !important;
+      gap: 1rem;
+    }
+  }
+  
+  /* ==== HEADER BASE ==== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: var(--header-bg);
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* ==== MENU ICON ==== */
+.menu-icon {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text); /* auto-adapt to theme */
+  display: none; /* hidden by default (shown in mobile) */
+}
+
+/* ==== NAV DEFAULT ==== */
+#nav-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+/* Hide menu when "hidden" class applied */
+#nav-links.hidden {
+  display: none;
+}
+
+/* ==== MOBILE STYLING ==== */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* show ☰ on mobile */
+  }
+
+  #nav-links {
+    flex-direction: column;
+    background: var(--header-bg);
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 0;
+  }
+
+  #nav-links a,
+  #nav-links button {
+    margin: 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* ==== DESKTOP RESTORE ==== */
+@media (min-width: 769px) {
+  #nav-links {
+    display: flex !important;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header-bg);
+  padding: 1rem 2rem;
+  flex-wrap: nowrap;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ☰ icon styling (manual color already handled) */
+.menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile menu visibility */
+#nav-links.hidden {
+  display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  #nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--header-bg);
+    padding: 1rem;
+  }
+
+  #nav-links a,
+  #nav-links button {
+    width: 100%;
+    text-align: left;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Always show nav on desktop */
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex !important;
+    gap: 1.5rem;
+  }
+}
+
+/* Basic nav */
 nav {
   display: flex;
   align-items: center;
@@ -464,9 +646,27 @@ nav {
     align-items: center;
   }
 
+/* Default for light theme (black icon) */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+/* Show and override color in dark mode */
+[data-theme="dark"] .menu-icon {
+  display: block;
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
+}
 
   #nav-links {
     flex-direction: column;
@@ -481,6 +681,70 @@ nav {
     margin: 0.5rem 1.5rem;
     text-align: left;
     width: 100%;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header-bg);
+  padding: 1rem 2rem;
+  flex-wrap: nowrap;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ☰ icon styling (manual color already handled) */
+.menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile menu visibility */
+#nav-links.hidden {
+  display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  #nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--header-bg);
+    padding: 1rem;
+  }
+
+  #nav-links a,
+  #nav-links button {
+    width: 100%;
+    text-align: left;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Always show nav on desktop */
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex !important;
+    gap: 1.5rem;
   }
 }
 
