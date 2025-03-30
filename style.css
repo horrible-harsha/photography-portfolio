@@ -484,6 +484,13 @@ nav {
   }
 }
 
+/* Hides nav only on mobile if .hidden is applied */
+@media (max-width: 768px) {
+  #nav-links.hidden {
+    display: none;
+  }
+}
+
 /* Mobile Responsive  */
 @media (max-width: 768px) {
     header {
