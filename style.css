@@ -436,6 +436,54 @@
     margin-top: 3rem;
   }
   
+  /* Basic nav */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide hamburger icon on desktop */
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide nav for mobile until toggled */
+#nav-links.hidden {
+  display: none;
+}
+
+/* === MOBILE ONLY === */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--header-bg);
+    margin-top: 1rem;
+    padding: 1rem 0;
+  }
+
+  #nav-links a,
+  #nav-links button {
+    margin: 0.5rem 1.5rem;
+    text-align: left;
+    width: 100%;
+  }
+}
+
 /* Mobile Responsive  */
 @media (max-width: 768px) {
     header {
