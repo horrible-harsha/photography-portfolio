@@ -6,62 +6,77 @@
   <title>Portfolio | Harsha The Horrible</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <div class="header-left">
-      <div class="logo">Harsha<span>_the_Horrible</span></div>
+<!-- Portraits -->
+<section class="category-block" data-category="Portraits">
+  <h2>Portraits</h2>
+  <div class="carousel">
+    <button class="carousel-btn left">←</button>
+    <div class="carousel-track">
+      <a href="photo-template.html?img=images/portrait1.jpg"><img src="images/portrait1.jpg" alt="portrait1" /></a>
+      <a href="photo-template.html?img=images/portrait2.jpg"><img src="images/portrait2.jpg" alt="portrait2" /></a>
+      <a href="photo-template.html?img=images/portrait3.jpg"><img src="images/portrait3.jpg" alt="portrait3" /></a>
+      <a href="photo-template.html?img=images/portrait4.jpg"><img src="images/portrait4.jpg" alt="portrait4" /></a>
     </div>
-    <div class="header-right">
-      <button id="menu-toggle" class="menu-icon">☰</button>
-      <nav id="nav-links" class="hidden">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <button id="theme-toggle">🌙</button>
-      </nav>
+    <button class="carousel-btn right">→</button>
+  </div>
+  <div class="view-all-wrapper">
+    <a href="view-category.html?category=Portraits" class="view-all-btn">View All →</a>
+  </div>
+</section>
+
+<!-- Street -->
+<section class="category-block" data-category="Street">
+  <h2>Street</h2>
+  <div class="carousel">
+    <button class="carousel-btn left">←</button>
+    <div class="carousel-track">
+      <a href="photo-template.html?img=images/street1.jpg"><img src="images/street1.jpg" alt="street1" /></a>
+      <a href="photo-template.html?img=images/street2.jpg"><img src="images/street2.jpg" alt="street2" /></a>
+      <a href="photo-template.html?img=images/street3.jpg"><img src="images/street3.jpg" alt="street3" /></a>
+      <a href="photo-template.html?img=images/street4.jpg"><img src="images/street4.jpg" alt="street4" /></a>
     </div>
-  </header>
-  
-  <main>
-    <section class="portfolio-section">
-      <h2>My Work</h2>
+    <button class="carousel-btn right">→</button>
+  </div>
+  <div class="view-all-wrapper">
+    <a href="view-category.html?category=Street" class="view-all-btn">View All →</a>
+  </div>
+</section>
 
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="instagram">Instagram</button>
-        <button class="filter-btn" data-filter="portraits">Portraits</button>
-        <button class="filter-btn" data-filter="nature">Nature</button>
-        <button class="filter-btn" data-filter="street">Street</button>
-        <button class="filter-btn" data-filter="unposted">Unposted</button>
-      </div>
-
-      <div class="gallery-grid">
-        <img src="images/insta1.jpg" alt="Instagram" data-category="instagram" />
-        <img src="images/portrait1.jpg" alt="Portrait" data-category="portraits" />
-        <img src="images/nature1.jpg" alt="Nature" data-category="nature" />
-        <img src="images/street2.jpg" alt="Street" data-category="street" />
-        <img src="images/nature2.jpg" alt="Nature" data-category="nature" />
-        <img src="images/unposted1.jpg" alt="Unposted" data-category="unposted" />
-        <img src="images/portrait2.jpg" alt="Portrait" data-category="portraits" />
-        <img src="images/street1.jpg" alt="Street" data-category="street" />
-        <img src="images/nature3.jpg" alt="Nature" data-category="nature" />
-        <img src="images/portrait3.jpg" alt="Portrait" data-category="portraits" />
-        <img src="images/street3.jpg" alt="Street" data-category="street" />
-        <img src="images/portrait4.jpg" alt="Portrait" data-category="portraits" />
-        <img src="images/street4.jpg" alt="Street" data-category="street" />
-        </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Harsha The Horrible. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://instagram.com/harsha_the_horrible" target="_blank">📷 Instagram</a>
-      <a href="contact.html">✉️ Contact</a>
+<!-- Nature -->
+<section class="category-block" data-category="Nature">
+  <h2>Nature</h2>
+  <div class="carousel">
+    <button class="carousel-btn left">←</button>
+    <div class="carousel-track">
+      <a href="photo-template.html?img=images/nature1.jpg"><img src="images/nature1.jpg" alt="nature1" /></a>
+      <a href="photo-template.html?img=images/nature2.jpg"><img src="images/nature2.jpg" alt="nature2" /></a>
+      <a href="photo-template.html?img=images/nature3.jpg"><img src="images/nature3.jpg" alt="nature3" /></a>
     </div>
-  </footer>
+    <button class="carousel-btn right">→</button>
+  </div>
+  <div class="view-all-wrapper">
+    <a href="view-category.html?category=Nature" class="view-all-btn">View All →</a>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Unposted -->
+<section class="category-block" data-category="Unposted">
+  <h2>Unposted</h2>
+  <div class="carousel">
+    <button class="carousel-btn left">←</button>
+    <div class="carousel-track">
+      <a href="photo-template.html?img=images/unposted1.jpg"><img src="images/unposted1.jpg" alt="unposted1" /></a>
+    </div>
+    <button class="carousel-btn right">→</button>
+  </div>
+  <div class="view-all-wrapper">
+    <a href="view-category.html?category=Unposted" class="view-all-btn">View All →</a>
+  </div>
+</section>
+
+<footer>
+<p>© 2025 Harsha The Horrible. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

@@ -68,3 +68,13 @@ if (menuToggle && navLinks) {
     navLinks.classList.toggle("hidden");
   });
 }
+
+document.querySelectorAll('.carousel').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      carousel.querySelector('.left').addEventListener('click', () => {
+        track.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      carousel.querySelector('.right').addEventListener('click', () => {
+        track.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    });

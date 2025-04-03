@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category View | Harsha The Horrible</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .category-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .category-gallery h1 {
+      margin-bottom: 2rem;
+      color: var(--accent);
+    }
+    .category-gallery .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .category-gallery .grid img {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .back-button {
+      margin-top: 2rem;
+    }
+    .back-button a {
+      background: var(--accent);
+      color: black;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Harsha<span>_the_Horrible</span></div>
+    <button id="menu-toggle" class="menu-icon">☰</button>
+    <nav id="nav-links" class="hidden">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <main class="category-gallery">
+    <h1 id="category-title">Category</h1>
+    <div class="grid" id="category-grid"></div>
+    <div class="back-button">
+      <a href="portfolio.html">← Back to Portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Harsha The Horrible. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const categoryMap = {
+      "Portraits": ["portrait1.jpg", "portrait2.jpg", "portrait3.jpg", "portrait4.jpg"],
+      "Street": ["street1.jpg", "street2.jpg", "street3.jpg", "street4.jpg"],
+      "Nature": ["nature1.jpg", "nature2.jpg", "nature3.jpg"],
+      "Unposted": ["unposted1.jpg"]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+
+    const title = document.getElementById("category-title");
+    const grid = document.getElementById("category-grid");
+
+    if (category && categoryMap[category]) {
+      title.textContent = category;
+      categoryMap[category].forEach(file => {
+        const link = document.createElement("a");
+        link.href = `photo-template.html?img=images/${file}`;
+        const img = document.createElement("img");
+        img.src = `images/${file}`;
+        img.alt = file;
+        link.appendChild(img);
+        grid.appendChild(link);
+      });
+    } else {
+      title.textContent = "Category Not Found";
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
